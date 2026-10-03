@@ -1,8 +1,24 @@
-# AC7VRDLSS
+# AC7VRDLSS — VR and optional HF8 haptics
+
+**Release 0.8:** choose the complete VR profile with or without HF8. Both include the Pande base profile and the unchanged R37 renderer. No separate base-profile installation is needed.
+
+| Download | Purpose |
+| --- | --- |
+| [Ace7Game-VR.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game-VR.zip) | Complete UEVR profile without haptics; no SimHub required. Byte-identical to R37. |
+| [Ace7Game-VR-HF8.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game-VR-HF8.zip) | Complete UEVR profile with AC7 Haptics 0.8. |
+| [AC7-HF8-SimHub.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/AC7-HF8-SimHub.zip) | Required companion for HF8: game definition, importable effects profile, guides and terms. |
+
+**[English installation guide](docs/HF8-INSTALL-EN.md) · [Guía detallada en español](docs/HF8-INSTALL-ES.md) · [Terms and credits](docs/DISTRIBUTION.md) · [Checksums](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/SHA256SUMS.txt)**
+
+Manual installation, no installer. Import one of the two VR ZIPs through UEVR **Import Config**. For HF8, also follow the guide to copy `AC7.simdef` and import `AC7-HF8.siprofile` in SimHub. Initial SimHub output is disabled and overall volume is 35%; enable and adjust it during setup. Installation is not repeated for each flight.
+
+HF8 features include progressive throttle feedback, directional turns, roll sweeps, missiles, machine gun, alternating cloud rattle and available flare/damage/lightning/warning cues. The **HF8 Haptics** panel in UEVR controls each effect; SimHub controls overall volume and physical motor assignment. The standard HF8 was physically tested with SimHub 9.12.9 (licensed edition) and the exact UEVR build below. HF8 Pro is not yet validated. See the guide for input fallback and telemetry limitations.
+
+The [previous R37 release](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.1-r37) remains available. This is a binary-distribution repository: our buildable mod source is not published. Required runtime Lua and the corresponding modified OFXR source remain included under their applicable terms.
 
 DLSS, DLAA and Neural rendering for ACE COMBAT 7 through the NVIDIA_DLSS UEVR plug-in, with optional OFXR frame generation.
 
-The project uses game-specific adapters with shared rendering controls. **ACE COMBAT 7: SKIES UNKNOWN â€” Direct3D 11** is the first supported game.
+The project uses game-specific adapters with shared rendering controls. **ACE COMBAT 7: SKIES UNKNOWN — Direct3D 11** is the first supported game.
 
 The download is a **complete ACE COMBAT 7 profile**, including the Pande base profile and its existing scripts, controls and companion-mod integrations. No separate Pande profile installation is required.
 
@@ -30,7 +46,7 @@ The download is a **complete ACE COMBAT 7 profile**, including the Pande base pr
 
 Use the specified UEVR build. Compatibility with other games or UEVR builds must be established separately.
 
-**Download the required build:** [UEVR Nightly 01143 â€” official release](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Download `UEVR.zip` from the release's **Assets** section. This link points to the exact required release, not a changing latest-version page.
+**Download the required build:** [UEVR Nightly 01143 — official release](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Download `UEVR.zip` from the release's **Assets** section. This link points to the exact required release, not a changing latest-version page.
 
 UEVR, a working headset connection and an NVIDIA GPU compatible with the selected rendering features are required.
 
@@ -38,14 +54,14 @@ UEVR, a working headset connection and an NVIDIA GPU compatible with the selecte
 
 1. Close ACE COMBAT 7 and UEVR.
 2. Download and extract the exact **UEVR Nightly 01143** build linked above (revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`). Use its injector for this profile.
-3. Back up your existing AC7 profile if needed, then **delete the entire `Ace7Game` folder** from `%APPDATA%\UnrealVRMod`. This clean import is required when replacing an existing profile.
-4. Download [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip).
-5. Open the specified UEVR injector, select **Import Config**, and choose `Ace7Game.zip`.
+3. Move your existing `Ace7Game` folder from `%APPDATA%\UnrealVRMod` to a backup location outside that folder. This clean import prevents old plug-ins remaining active.
+4. Download **Ace7Game-VR.zip** or **Ace7Game-VR-HF8.zip** from the table above.
+5. Open the specified UEVR injector, select **Import Config**, and choose the downloaded VR ZIP. For HF8, also complete the linked SimHub installation guide.
 6. Start AC7 and inject with that same UEVR build as usual.
 
 The ZIP contains the complete profile. It belongs in UEVR's profile storage, not in the UEVR installation directory or the game directory.
 
-`Ace7Game.zip` contains the `Ace7Game` folder with the complete profile inside. Import our ZIP directly; no separate Pande profile is needed. Remove the previous AC7 profile before importing rather than merging the two profiles.
+Each VR ZIP contains the `Ace7Game` folder with the complete profile inside. Import our ZIP directly; no separate Pande profile is needed. Remove the previous AC7 profile before importing rather than merging the two profiles.
 
 The plug-in extracts its private runtime files automatically. No manual temporal-AA changes to `Engine.ini` are required.
 
@@ -100,7 +116,7 @@ When comparing OFXR on and off, use the same scene and rendering settings. Keep 
 
 ## License
 
-Original AC7VRDLSS integration code is available under the [MIT License](LICENSE). This grant does not relicense third-party code, the community profile, or vendor binaries.
+Original AC7VRDLSS integration and AC7 Haptics components retain the [MIT License](LICENSE). This download repository does not publish the buildable source of our mod. This grant does not relicense third-party code, the community profile, or vendor binaries.
 
 The included modified OFXR provider retains **LGPL-3.0-or-later**. See its [source and build files](third_party/ofxr), [LGPL text](third_party/ofxr/LICENSE), [GPL text incorporated by the LGPL](third_party/ofxr/licenses/GPL-3.0-or-later.txt), and [dependency notices](third_party/ofxr/THIRD_PARTY.md). Upstream: [OFXR Bridge by tig3rmast3r and contributors](https://github.com/tig3rmast3r/OFXR-Bridge).
 

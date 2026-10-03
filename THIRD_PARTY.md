@@ -28,3 +28,7 @@ This repository is a community integration and is not endorsed by NVIDIA. The re
 `NVIDIA_DLSS/LICENSE` contains the MIT license for the original integration, copyright (c) 2026 Beren5556. `NVIDIA_DLSS/THIRD_PARTY.md` contains these credits. The release also includes full license texts in `NVIDIA_DLSS/licenses`; the private runtime extracts its component notices alongside the corresponding files.
 
 The corresponding modified OFXR source and build instructions for this release are available at https://github.com/Beren5556/AC7VRDLSS-Downloads/tree/v0.1-r37/third_party/ofxr . OFXR is a separate dynamically loaded library and retains LGPL-3.0-or-later. Its LGPL and incorporated GPL texts are supplied together.
+
+## AC7 Haptics 0.8
+
+The optional AC7 telemetry DLL and its HF8 panel, effects and documentation are original integration additions under the root MIT license. The UEVR API notice is included at `AC7_Haptics/licenses/UEVR-API-LICENSE.txt` in the HF8 profile. SimHub and Next Level Racing hardware are external products, not bundled or relicensed. See [distribution terms](docs/DISTRIBUTION.md) for scope, source-distribution policy and complete credits.

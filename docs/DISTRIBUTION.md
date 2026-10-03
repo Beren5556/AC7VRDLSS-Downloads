@@ -1,0 +1,21 @@
+# Distribution, licenses and credits — 0.8
+
+This repository distributes ready-to-use AC7 VR profiles, the optional HF8 runtime, SimHub definitions/effects and documentation. The original mod's buildable source, development project, tests and private configuration are not published. Lua scripts needed to execute the UEVR profile are necessarily included. Corresponding third-party source required for the modified OFXR provider remains available.
+
+## Original work
+
+The original AC7VRDLSS integration, AC7 Haptics additions and original documentation are covered by the existing [MIT License](../LICENSE), copyright 2026 Beren5556. Binary distribution does not remove that grant or relicense third-party work. Preserve applicable copyright and permission notices when redistributing. Software is supplied **as is, without warranty**, on the terms stated in that license.
+
+## Third-party work
+
+- **Pande and the original script/companion-mod authors:** the complete base AC7 UEVR profile. Their attribution and applicable terms are preserved; no new MIT grant is asserted over their work.
+- **praydog and UEVR contributors:** UEVR and its plug-in API. The API's separate MIT notice accompanies the HF8 package. Obtain the exact required injector from the official release; it is not bundled here.
+- **tig3rmast3r and OFXR contributors:** modified OFXR provider under LGPL-3.0-or-later. [Corresponding source and build files](../third_party/ofxr), [build instructions](BUILDING_OFXR.md), [LGPL](../third_party/ofxr/LICENSE), [incorporated GPL text](../third_party/ofxr/licenses/GPL-3.0-or-later.txt) and [dependency notices](../third_party/ofxr/THIRD_PARTY.md) remain provided. These modifications are not withheld as private original mod code.
+- **NVIDIA, AMD, Khronos, MinHook, nlohmann/json, Neural feeder and DLSSNR Cost Scaler contributors:** their runtimes/dependencies retain their own licenses. See [THIRD_PARTY.md](../THIRD_PARTY.md) and the complete notices inside the profile and extracted runtime. NVIDIA binaries are not made MIT-licensed by inclusion.
+- **SimHub and Next Level Racing:** external software/hardware used by the optional haptic integration, not bundled or relicensed. The supplied `.simdef` and `.siprofile` describe this mod's telemetry and effects; acquire SimHub separately under its own terms.
+
+The unchanged R37 renderer and its notices are included in both 0.8 download variants. The non-HF8 ZIP is byte-identical to the prior published package. The prior release remains accessible.
+
+This is an independent community project. ACE COMBAT, UEVR, NVIDIA, SimHub and HF8 names identify compatibility or credit; they do not imply affiliation, sponsorship or endorsement by their respective owners. The game, headset software, injector, SimHub license and hardware are not supplied by this release.
+
+Physical acceptance covers the tested standard HF8 configuration with UEVR Nightly 01143 and SimHub 9.12.9. Other hardware/builds need separate validation. See the installation guide for supported effects, known limitations, backups and manual removal.
