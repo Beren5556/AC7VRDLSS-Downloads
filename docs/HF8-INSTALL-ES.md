@@ -8,8 +8,8 @@ Desde los archivos de la [versión 0.8](https://github.com/Beren5556/AC7VRDLSS-D
 
 | Uso | Descargas |
 | --- | --- |
-| VR sin cojín | Solo `Ace7Game-VR.zip` |
-| VR con HF8 | `Ace7Game-VR-HF8.zip` y `AC7-HF8-SimHub.zip` |
+| VR sin cojín | Solo [Ace7Game.zip — sin HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip) |
+| VR con HF8 | [Ace7Game.zip — con HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game.zip) y `AC7-HF8-SimHub.zip` |
 
 Los dos ZIP de UEVR incluyen el perfil base de Pande: elige uno. La variante sin HF8 conserva exactamente R37 y no necesita SimHub. La descarga anterior sigue disponible.
 
@@ -23,7 +23,7 @@ Para los hápticos necesitas HF8 alimentado y conectado por USB, y [SimHub](http
 2. Abre el Explorador de archivos y pega `%APPDATA%\UnrealVRMod` en la barra de direcciones.
 3. Si existe `Ace7Game`, mueve esa carpeta completa a una ubicación de respaldo fuera de `UnrealVRMod`. Así conservas tus ajustes y evitas mezclar DLL antiguas con la nueva versión.
 4. Extrae la nightly indicada en una carpeta propia y abre su inyector.
-5. Pulsa **Import Config** y selecciona `Ace7Game-VR-HF8.zip`, o `Ace7Game-VR.zip` si no quieres hápticos. Importa directamente el ZIP; no lo descomprimas en la carpeta del juego ni del inyector.
+5. Pulsa **Import Config** y selecciona `Ace7Game.zip`, o `Ace7Game.zip` si no quieres hápticos. Importa directamente el ZIP; no lo descomprimas en la carpeta del juego ni del inyector.
 6. En la variante HF8, comprueba que `%APPDATA%\UnrealVRMod\Ace7Game` contiene `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua` y la carpeta `AC7_Haptics`.
 
 El paquete HF8 lleva activada la salida local de telemetría. El perfil de SimHub lleva inicialmente desactivada la salida al cojín: la activarás en el paso 3. Los archivos del renderizador son los mismos de R37.
@@ -94,10 +94,12 @@ Para ayuda, abre una [incidencia](https://github.com/Beren5556/AC7VRDLSS-Downloa
 
 No repitas la instalación en cada vuelo. Antes de actualizar, guarda el perfil UEVR y exporta tus ajustes de SimHub. Actualiza conjuntamente sonda, definición y perfil: un cambio de protocolo puede dejar silencioso un perfil antiguo. Recupera después los ajustes personales que necesites comparando ambas versiones.
 
-Para volver a la variante sin hápticos, cierra las aplicaciones, respalda/mueve todo el perfil AC7 fuera de su carpeta de perfiles e importa `Ace7Game-VR.zip`. Así no queda una DLL háptica antigua cargada. Puedes retirar también la carpeta de definición AC7-HF8 y su perfil de efectos de SimHub, conservando los de otros juegos. También puedes restaurar tu copia completa anterior.
+Para volver a la variante sin hápticos, cierra las aplicaciones, respalda/mueve todo el perfil AC7 fuera de su carpeta de perfiles e importa `Ace7Game.zip`. Así no queda una DLL háptica antigua cargada. Puedes retirar también la carpeta de definición AC7-HF8 y su perfil de efectos de SimHub, conservando los de otros juegos. También puedes restaurar tu copia completa anterior.
 
 ## Términos y alcance
 
 La integración original conserva la licencia MIT y se entrega tal cual, sin garantía, según su texto. No se publican los fuentes compilables de nuestro mod. Se incluyen los Lua necesarios para ejecutar el perfil y los fuentes/materiales obligatorios del OFXR modificado bajo LGPL. Los componentes ajenos conservan sus licencias y créditos. Proyecto comunitario independiente, sin afiliación oficial con Bandai Namco, NVIDIA, SimHub ni Next Level Racing. Consulta los [términos y créditos completos](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v0.8/docs/DISTRIBUTION.md).
 
 No se certifican HF8 Pro, otras nightly/juegos ni ganancias de FPS. Proximidad a terreno/objetos, estelas y dirección de disparos recibidos no se presentan como funciones implementadas.
+
+**Nombre obligatorio:** ambas variantes deben llamarse `Ace7Game.zip` y contener una única carpeta `Ace7Game/` con el perfil completo. UEVR identifica el juego por el nombre del ZIP. Descarga cada variante en una carpeta distinta y elimina sufijos como `(1)` que añada el navegador antes de importar. La descarga sin HF8 está en R37; la descarga con HF8 está en 0.8.

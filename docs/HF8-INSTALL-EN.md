@@ -8,8 +8,8 @@ Get the assets from [release 0.8](https://github.com/Beren5556/AC7VRDLSS-Downloa
 
 | Your setup | Files to download |
 | --- | --- |
-| VR without haptics | `Ace7Game-VR.zip` only |
-| VR with HF8 | `Ace7Game-VR-HF8.zip` and `AC7-HF8-SimHub.zip` |
+| VR without haptics | [Ace7Game.zip — without HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip) only |
+| VR with HF8 | [Ace7Game.zip — with HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game.zip) and `AC7-HF8-SimHub.zip` |
 
 Both UEVR ZIPs are complete profiles including the Pande base profile. Choose one. The version without HF8 is the unchanged R37 package and does not require SimHub. The previous R37 release remains available.
 
@@ -23,7 +23,7 @@ Both UEVR ZIPs are complete profiles including the Pande base profile. Choose on
 1. Close AC7 and UEVR. Close SimHub while copying its definition later.
 2. In File Explorer, paste `%APPDATA%\UnrealVRMod` into the address bar. If `Ace7Game` exists, move that whole folder to a backup location outside `UnrealVRMod`. This preserves your previous settings and avoids merging old plug-ins into the new profile.
 3. Extract the specified UEVR build into its own folder. Run that build's injector.
-4. Select **Import Config** and choose `Ace7Game-VR-HF8.zip` (or `Ace7Game-VR.zip` for the non-haptic version). Import the ZIP directly; do not extract it into the game or injector directory.
+4. Select **Import Config** and choose `Ace7Game.zip` (or `Ace7Game.zip` for the non-haptic version). Import the ZIP directly; do not extract it into the game or injector directory.
 5. For the HF8 variant, check that `%APPDATA%\UnrealVRMod\Ace7Game` now contains `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua`, and `AC7_Haptics`.
 
 The haptic package enables its local telemetry output. The SimHub profile initially disables the pad output, so you explicitly enable it in step 3. Renderer files are identical to R37. Do not replace other games' profiles or modify global graphics settings.
@@ -94,8 +94,10 @@ For support, use this repository's [Issues](https://github.com/Beren5556/AC7VRDL
 
 You do **not** repeat installation for each flight. Back up UEVR settings and export your tuned SimHub profile before an update. Update the probe, definition and effects profile together; protocol revisions can make old profiles silent. Reapply only the personal settings you need after comparing versions.
 
-To return to the non-haptic variant, close the applications, back up/move the whole AC7 UEVR profile outside its storage folder, then import `Ace7Game-VR.zip`. A clean switch prevents an old haptic DLL remaining loaded. You may also remove just the AC7-HF8 definition folder and its SimHub effects profile. Leave other games' profiles intact. Restoring your previous full backup is another rollback option.
+To return to the non-haptic variant, close the applications, back up/move the whole AC7 UEVR profile outside its storage folder, then import `Ace7Game.zip`. A clean switch prevents an old haptic DLL remaining loaded. You may also remove just the AC7-HF8 definition folder and its SimHub effects profile. Leave other games' profiles intact. Restoring your previous full backup is another rollback option.
 
 The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v0.8/docs/DISTRIBUTION.md).
 
 HF8 Pro, other games/nightly builds, proximity to scenery, wakes and directional incoming gunfire are not claimed as implemented/validated features. No FPS gain is promised.
+
+**ZIP naming:** both variants must remain named `Ace7Game.zip`, containing one `Ace7Game/` folder with the entire profile. UEVR uses the ZIP filename to identify the game. Download each variant to a separate folder; remove browser-added suffixes such as `(1)` before importing. The non-HF8 download is in R37; the HF8 download is in 0.8.

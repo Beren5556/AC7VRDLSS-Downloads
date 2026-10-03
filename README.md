@@ -4,8 +4,8 @@
 
 | Download | Purpose |
 | --- | --- |
-| [Ace7Game-VR.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game-VR.zip) | Complete UEVR profile without haptics; no SimHub required. Byte-identical to R37. |
-| [Ace7Game-VR-HF8.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game-VR-HF8.zip) | Complete UEVR profile with AC7 Haptics 0.8. |
+| [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip) | Complete UEVR profile without haptics; no SimHub required. Byte-identical to R37. |
+| [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game.zip) | Complete UEVR profile with AC7 Haptics 0.8. |
 | [AC7-HF8-SimHub.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/AC7-HF8-SimHub.zip) | Required companion for HF8: game definition, importable effects profile, guides and terms. |
 
 **[English installation guide](docs/HF8-INSTALL-EN.md) · [Guía detallada en español](docs/HF8-INSTALL-ES.md) · [Terms and credits](docs/DISTRIBUTION.md) · [Checksums](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/SHA256SUMS.txt)**
@@ -55,7 +55,7 @@ UEVR, a working headset connection and an NVIDIA GPU compatible with the selecte
 1. Close ACE COMBAT 7 and UEVR.
 2. Download and extract the exact **UEVR Nightly 01143** build linked above (revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`). Use its injector for this profile.
 3. Move your existing `Ace7Game` folder from `%APPDATA%\UnrealVRMod` to a backup location outside that folder. This clean import prevents old plug-ins remaining active.
-4. Download **Ace7Game-VR.zip** or **Ace7Game-VR-HF8.zip** from the table above.
+4. Download **Ace7Game.zip** or **Ace7Game.zip** from the table above.
 5. Open the specified UEVR injector, select **Import Config**, and choose the downloaded VR ZIP. For HF8, also complete the linked SimHub installation guide.
 6. Start AC7 and inject with that same UEVR build as usual.
 
@@ -127,3 +127,5 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for component-specific terms and attributio
 This is a community integration for UEVR. It is not an official NVIDIA product and does not imply NVIDIA endorsement.
 
 Credit to **Pande** for the base ACE COMBAT 7 profile, and to the authors of its existing scripts and companion mods. UEVR and the included third-party components retain their original authorship and applicable licenses. Neural rendering uses a community integration; its availability and hardware requirements depend on the included runtime.
+
+**Required ZIP name:** both profile downloads are named `Ace7Game.zip` and contain the complete `Ace7Game/` folder. Keep that exact name when importing; use separate download folders for the two variants and remove browser-added `(1)` suffixes. The table links to R37 without HF8 and 0.8 with HF8.
