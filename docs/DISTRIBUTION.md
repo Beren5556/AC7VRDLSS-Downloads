@@ -14,7 +14,7 @@ The original AC7VRDLSS integration, AC7 Haptics additions and original documenta
 - **NVIDIA, AMD, Khronos, MinHook, nlohmann/json, Neural feeder and DLSSNR Cost Scaler contributors:** their runtimes/dependencies retain their own licenses. See [THIRD_PARTY.md](../THIRD_PARTY.md) and the complete notices inside the profile and extracted runtime. NVIDIA binaries are not made MIT-licensed by inclusion.
 - **SimHub and Next Level Racing:** external software/hardware used by the optional haptic integration, not bundled or relicensed. The supplied `.simdef` and `.siprofile` describe this mod's telemetry and effects; acquire SimHub separately under its own terms.
 
-Both 0.8.1 variants contain the same accepted renderer, both OFXR providers and their notices. The no-haptics variant omits only HF8 components. Previous releases remain accessible.
+The single 0.8.1 profile includes both OFXR providers and HF8 support. Haptics and both OFXR providers default to Off.
 
 This is an independent community project. ACE COMBAT, UEVR, NVIDIA, SimHub and HF8 names identify compatibility or credit; they do not imply affiliation, sponsorship or endorsement by their respective owners. The game, headset software, injector, SimHub license and hardware are not supplied by this release.
 

@@ -4,14 +4,9 @@ This is a complete UEVR profile plus optional HF8 haptics. Installation is manua
 
 ## Downloads and requirements
 
-Get the assets from [release 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v 0.8.1).
+Get the assets from [release 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.1).
 
-| Your setup | Files to download |
-| --- | --- |
-| VR without haptics | [Ace7Game.zip — without HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1-no-haptics/Ace7Game.zip) only |
-| VR with HF8 | [Ace7Game.zip — with HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1/Ace7Game.zip) and `AC7-HF8-SimHub.zip` |
-
-Both UEVR ZIPs are complete profiles including the Pande base profile. Choose one. Both variants include renderer 0.8.1; the version without HF8 does not require SimHub. The previous R37 release remains available.
+Download [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.1/Ace7Game.zip). This single complete profile includes HF8 and the SimHub files in `Ace7Game/AC7_Haptics/SimHub/`. HF8 is disabled by default; SimHub is only needed if you enable haptics.
 
 - Windows, ACE COMBAT 7: SKIES UNKNOWN, Direct3D 11, and a working VR headset connection.
 - **UEVR Nightly 01143**, revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`: [exact official release](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Download its `UEVR.zip`. Other nightly versions are not validated.
@@ -23,17 +18,17 @@ Both UEVR ZIPs are complete profiles including the Pande base profile. Choose on
 1. Close AC7 and UEVR. Close SimHub while copying its definition later.
 2. In File Explorer, paste `%APPDATA%\UnrealVRMod` into the address bar. If `Ace7Game` exists, move that whole folder to a backup location outside `UnrealVRMod`. This preserves your previous settings and avoids merging old plug-ins into the new profile.
 3. Extract the specified UEVR build into its own folder. Run that build's injector.
-4. Select **Import Config** and choose `Ace7Game.zip` (or `Ace7Game.zip` for the non-haptic version). Import the ZIP directly; do not extract it into the game or injector directory.
-5. For the HF8 variant, check that `%APPDATA%\UnrealVRMod\Ace7Game` now contains `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua`, and `AC7_Haptics`.
+4. Select **Import Config** and choose `Ace7Game.zip`. Import the ZIP directly; do not extract it into the game or injector directory.
+5. Check that `%APPDATA%\UnrealVRMod\Ace7Game` now contains `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua`, and `AC7_Haptics`.
 
-The haptic package enables its local telemetry output. The SimHub profile initially disables the pad output, so you explicitly enable it in step 3. Both variants use the same renderer 0.8.1. Do not replace other games' profiles or modify global graphics settings.
+The profile starts with **HF8 enabled** unchecked. The telemetry service remains available so you can enable haptics from UEVR. The SimHub pad output also starts disabled.
 
 ## 2. Register AC7 in SimHub — one-time copy
 
-1. Extract `AC7-HF8-SimHub.zip` to a folder you can find again.
+1. Open `%APPDATA%/UnrealVRMod/Ace7Game/AC7_Haptics/SimHub`, which contains the included definition and effects profile.
 2. With SimHub closed, paste `%LOCALAPPDATA%\SimHub` into File Explorer's address bar.
 3. Inside it, create folders `ExternalSims`, then `Definitions`, then `AC7-HF8` if they do not already exist.
-4. Copy `AC7.simdef` from the extracted download into that final folder. The exact final path is `%LOCALAPPDATA%\SimHub\ExternalSims\Definitions\AC7-HF8\AC7.simdef`. Avoid an extra nested ZIP folder or a hidden `.txt` suffix.
+4. Copy `AC7.simdef` from the included SimHub folder into that final folder. The exact final path is `%LOCALAPPDATA%\SimHub\ExternalSims\Definitions\AC7-HF8\AC7.simdef`. Avoid an extra nested ZIP folder or a hidden `.txt` suffix.
 5. Start SimHub. Find/select **Ace Combat 7 - UEVR Telemetry** in its game list. This is the game definition supplied by the mod; you do not need Settings → Custom games.
 
 This uses SimHub's supported [external-sim definition drop-in directory](https://manual.simhubdash.com/external-sim-integration). No registry editing, administrator command or account registration is involved. A copy of the definition is also included in the installed UEVR profile under `AC7_Haptics\SimHub`.
@@ -43,7 +38,7 @@ This uses SimHub's supported [external-sim definition drop-in directory](https:/
 ## 3. Import the effects profile and enable HF8
 
 1. Open **ShakeIt Motors** in SimHub, then **Profiles manager**.
-2. Choose **Import profile** and select `AC7-HF8.siprofile` from the extracted SimHub download. Load **AC7 HF8 0.8**.
+2. Choose **Import profile** and select `AC7-HF8.siprofile` from the included SimHub folder. Load **AC7 HF8 0.8**.
 3. Keep the included output settings with this profile. If asked about common versus profile-specific output settings, keep them profile-specific so other games retain their settings.
 4. Open **Motors Output** and locate **ForceFeel Pad / Next Level Racing HF8 Haptic Gaming Pad**. Connect and power the HF8; close any other application currently controlling the pad. Enable that output.
 5. The profile starts at **35% overall volume**. Start there and adjust to your pad and preference. The reference physical test used 80%; this is a tuning reference, not a required setting. Do not set all effect sliders to the overall-volume value: they control a different level.
@@ -94,15 +89,18 @@ For support, use this repository's [Issues](https://github.com/Beren5556/AC7VRDL
 
 You do **not** repeat installation for each flight. Back up UEVR settings and export your tuned SimHub profile before an update. Update the probe, definition and effects profile together; protocol revisions can make old profiles silent. Reapply only the personal settings you need after comparing versions.
 
-To return to the non-haptic variant, close the applications, back up/move the whole AC7 UEVR profile outside its storage folder, then import `Ace7Game.zip`. A clean switch prevents an old haptic DLL remaining loaded. You may also remove just the AC7-HF8 definition folder and its SimHub effects profile. Leave other games' profiles intact. Restoring your previous full backup is another rollback option.
+To disable haptics, uncheck **HF8 enabled** in UEVR and press **Apply and save**. Keep the same complete profile. Restore your full backup to roll back.
 
-The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v 0.8.1/docs/DISTRIBUTION.md).
+The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/main/docs/DISTRIBUTION.md).
 
 HF8 Pro, other games/nightly builds, proximity to scenery, wakes and directional incoming gunfire are not claimed as implemented/validated features. No FPS gain is promised.
 
-**ZIP naming:** both variants must remain named `Ace7Game.zip`, containing one `Ace7Game/` folder with the entire profile. UEVR uses the ZIP filename to identify the game. Download each variant to a separate folder; remove browser-added suffixes such as `(1)` before importing. Both downloads are version 0.8.1; the non-HF8 asset is in the no-haptics companion release.
+**ZIP naming:** keep `Ace7Game.zip` with a single `Ace7Game/` root folder.
 
+## What's new in 0.8.1
 
-## Update 0.8.1
+- Added OFXR Fork Djules75 0.2.10.1 / V412 alongside OFXR Classic 0.2.1 / V116.
+- Separate UEVR controls and named INI parameters for each provider, with mutually exclusive activation. Both default to Off.
+- One shared Apply / Apply and save / Discard action bar for rendering and OFXR. OFXR changes require restarting the game.
 
-Both VR downloads now use renderer 0.8.1; the SimHub/HF8 components remain 0.8. See README for the two corrected download links. Both OFXR providers default to Off. One shared Apply / Apply and save action bar controls rendering and OFXR; all OFXR changes require restarting. See README Known limitations for the isolated first-pair abort and focus/counter issue, retained for follow-up.
+To activate haptics after setting up SimHub, check **HF8 enabled** in UEVR and press **Apply and save**.
