@@ -10,3 +10,8 @@ cmake --build build-ofxr --config Release --target XR_APILAYER_XRFrameBridge_dia
 ```
 
 The provider is a separate dynamically loaded DLL. Its layer/bridge API headers are included with the source. Preserve all component licenses when replacing or redistributing it.
+
+
+## Fork Djules750.2.10.1/V412
+
+Sources: third_party/ofxr-djules75, pinned provenance in AC7_INTEGRATION.json. Follow its docs/BUILDING.md for FidelityFX1.1.4 libraries and SDK inputs. Use the analogous command with -S third_party/ofxr-djules75 -B build-ofxr-djules75, setting XRFG_FIDELITYFX_SDK_ROOT and XRFG_NVIDIA_OPTICAL_FLOW_SDK_ROOT to your SDK locations. The source includes the required OpenXR/Vulkan headers; obtain the pinned OpenVR header if your checkout omits it. Build target XR_APILAYER_XRFrameBridge_diagnostic produces NVIDIA_DLSS_OFXR_DJULES75.dll. Do not use the standalone tray to integrate with this mod. The CMake wrapper only guards the optional private AC7 host-chain fixture when absent; provider source is identical to the release build. SDK paths/toolchain are not embedded into source requirements.

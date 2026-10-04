@@ -1,0 +1,48 @@
+#pragma once
+
+#include "xrfg/fps_overlay_model.hpp"
+#include "xrfg/steamvr_delivery.hpp"
+#include <d3d11_4.h>
+#include <d3d12.h>
+#include <openxr/openxr.h>
+#include <filesystem>
+#include <memory>
+#include <optional>
+
+namespace xrfg {
+
+// Owns only its VIEW space and small color swapchain. Never modifies a game
+// image, temporal history, game space, optical-flow job, or frame schedule.
+class OpenXrFpsOverlay final {
+public:
+    OpenXrFpsOverlay(XrInstance instance, XrSession session, XrSystemId system,
+        PFN_xrGetInstanceProcAddr get_proc, PFN_xrEndFrame end_frame,
+        ID3D12Device* device12, ID3D12CommandQueue* queue12,
+        ID3D11Device* device11, const std::filesystem::path& ini,
+        // Borrowed, owned by the session, and may be null. Shared with the
+        // presenter, which reads the vsync anchor from the same connection.
+        SteamVrDelivery* delivery);
+    ~OpenXrFpsOverlay();
+    // Called on the application's end-frame thread, not the presenter thread.
+    // Uploads at most 4 Hz; no explicit GPU fence wait, image-wait timeout zero.
+    void application_frame(const XrFrameEndInfo* info) noexcept;
+    // `new_content` is false for a repeat - the presenter handing the runtime
+    // a frame it already submitted, to keep the cadence when the application
+    // produced nothing. The quad still goes on, but it is not a frame and the
+    // counter must not treat it as one.
+    [[nodiscard]] XrResult end_frame(
+        const XrFrameEndInfo* info, bool synthetic, bool new_content = true);
+    void reset_metrics() noexcept;
+    // Terminal for this session. Keep resources alive until normal teardown;
+    // stop adding the quad or uploading textures immediately.
+    void suspend() noexcept;
+    [[nodiscard]] FpsSnapshot metrics() const noexcept;
+    // Angular counter bounds for a diagnostic burned into the S projection.
+    // Available without a spare runtime quad layer; Off/suspend disables it.
+    [[nodiscard]] std::optional<OverlayPlacement> marker_placement() const noexcept;
+private:
+    struct Impl;
+    std::unique_ptr<Impl> impl_;
+};
+
+} // namespace xrfg

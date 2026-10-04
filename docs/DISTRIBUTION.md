@@ -1,4 +1,4 @@
-# Distribution, licenses and credits — 0.8
+# Distribution, licenses and credits — 0.8.1
 
 This repository distributes ready-to-use AC7 VR profiles, the optional HF8 runtime, SimHub definitions/effects and documentation. The original mod's buildable source, development project, tests and private configuration are not published. Lua scripts needed to execute the UEVR profile are necessarily included. Corresponding third-party source required for the modified OFXR provider remains available.
 
@@ -14,8 +14,11 @@ The original AC7VRDLSS integration, AC7 Haptics additions and original documenta
 - **NVIDIA, AMD, Khronos, MinHook, nlohmann/json, Neural feeder and DLSSNR Cost Scaler contributors:** their runtimes/dependencies retain their own licenses. See [THIRD_PARTY.md](../THIRD_PARTY.md) and the complete notices inside the profile and extracted runtime. NVIDIA binaries are not made MIT-licensed by inclusion.
 - **SimHub and Next Level Racing:** external software/hardware used by the optional haptic integration, not bundled or relicensed. The supplied `.simdef` and `.siprofile` describe this mod's telemetry and effects; acquire SimHub separately under its own terms.
 
-The unchanged R37 renderer and its notices are included in both 0.8 download variants. The non-HF8 ZIP is byte-identical to the prior published package. The prior release remains accessible.
+Both 0.8.1 variants contain the same accepted renderer, both OFXR providers and their notices. The no-haptics variant omits only HF8 components. Previous releases remain accessible.
 
 This is an independent community project. ACE COMBAT, UEVR, NVIDIA, SimHub and HF8 names identify compatibility or credit; they do not imply affiliation, sponsorship or endorsement by their respective owners. The game, headset software, injector, SimHub license and hardware are not supplied by this release.
 
 Physical acceptance covers the tested standard HF8 configuration with UEVR Nightly 01143 and SimHub 9.12.9. Other hardware/builds need separate validation. See the installation guide for supported effects, known limitations, backups and manual removal.
+
+
+Fork djules75: [corresponding modified source](../third_party/ofxr-djules75), [license](../third_party/ofxr-djules75/LICENSE) and [notices](../third_party/ofxr-djules75/THIRD_PARTY.md). Upstream 0.2.10.1/V412, commit a1a4a2bf7b3307b7f4329c49870b158e5faaa45e.

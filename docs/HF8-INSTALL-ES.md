@@ -1,17 +1,17 @@
-# AC7 VR + HF8 0.8 — instalación y uso
+# AC7 VR + HF8 0.8.1 — instalación y uso
 
 Perfil completo de UEVR con hápticos opcionales para HF8. La instalación es manual, una vez por PC, sin instaladores ni comandos. La sonda incluida envía telemetría local a SimHub, que controla el cojín. No necesitas crear un juego personalizado ni indicar un botón fijo de tu joystick.
 
 ## Qué descargar
 
-Desde los archivos de la [versión 0.8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8):
+Desde los archivos de la [versión 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v 0.8.1):
 
 | Uso | Descargas |
 | --- | --- |
-| VR sin cojín | Solo [Ace7Game.zip — sin HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip) |
-| VR con HF8 | [Ace7Game.zip — con HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game.zip) y `AC7-HF8-SimHub.zip` |
+| VR sin cojín | Solo [Ace7Game.zip — sin HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1-no-haptics/Ace7Game.zip) |
+| VR con HF8 | [Ace7Game.zip — con HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1/Ace7Game.zip) y `AC7-HF8-SimHub.zip` |
 
-Los dos ZIP de UEVR incluyen el perfil base de Pande: elige uno. La variante sin HF8 conserva exactamente R37 y no necesita SimHub. La descarga anterior sigue disponible.
+Los dos ZIP de UEVR incluyen el perfil base de Pande: elige uno. Ambas variantes incluyen render 0.8.1; la variante sin HF8 no necesita SimHub. La descarga anterior sigue disponible.
 
 Necesitas Windows, ACE COMBAT 7 en Direct3D 11, visor conectado y **UEVR Nightly 01143**, revisión `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`. Descarga `UEVR.zip` de [esta versión oficial exacta](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Otras nightly no están validadas. Las funciones gráficas requieren una GPU NVIDIA compatible.
 
@@ -26,7 +26,7 @@ Para los hápticos necesitas HF8 alimentado y conectado por USB, y [SimHub](http
 5. Pulsa **Import Config** y selecciona `Ace7Game.zip`, o `Ace7Game.zip` si no quieres hápticos. Importa directamente el ZIP; no lo descomprimas en la carpeta del juego ni del inyector.
 6. En la variante HF8, comprueba que `%APPDATA%\UnrealVRMod\Ace7Game` contiene `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua` y la carpeta `AC7_Haptics`.
 
-El paquete HF8 lleva activada la salida local de telemetría. El perfil de SimHub lleva inicialmente desactivada la salida al cojín: la activarás en el paso 3. Los archivos del renderizador son los mismos de R37.
+El paquete HF8 lleva activada la salida local de telemetría. El perfil de SimHub lleva inicialmente desactivada la salida al cojín: la activarás en el paso 3. Ambas variantes llevan el mismo renderizador 0.8.1.
 
 ## 2. Dar de alta AC7 en SimHub
 
@@ -86,7 +86,7 @@ La alternativa del cañón lee la configuración DirectInput del juego, identifi
 | Solo el cañón está silencioso | Comprueba los límites de la alternativa automática de entrada; no hay un botón personal fijo. |
 | La nube no alterna de lado | Reimporta definición/perfil 0.8 y comprueba sus dos canales independientes. No utilices el perfil alfa antiguo. |
 | Deja de vibrar al pausar o perder datos | Es el comportamiento esperado de las protecciones. |
-| Cierre al activar DLSS | R37 mantiene una incidencia de identificación de shader/paso en algunos equipos. Prueba a iniciar en TAA con Neural y OFXR apagados y activar DLSS ya en vuelo. Es una alternativa sugerida, no una solución confirmada para todos los casos. Cambiar OFXR exige reiniciar el juego. |
+| Cierre al activar DLSS | El render mantiene una incidencia de identificación de shader/paso en algunos equipos. Prueba a iniciar en TAA con Neural y OFXR apagados y activar DLSS ya en vuelo. Es una alternativa sugerida, no una solución confirmada para todos los casos. Cambiar OFXR exige reiniciar el juego. |
 
 Para ayuda, abre una [incidencia](https://github.com/Beren5556/AC7VRDLSS-Downloads/issues) con versión del mod, nightly, versión de SimHub, modelo HF8, mando y pasos para reproducirla. Retira información personal de los registros que decidas compartir.
 
@@ -98,8 +98,13 @@ Para volver a la variante sin hápticos, cierra las aplicaciones, respalda/mueve
 
 ## Términos y alcance
 
-La integración original conserva la licencia MIT y se entrega tal cual, sin garantía, según su texto. No se publican los fuentes compilables de nuestro mod. Se incluyen los Lua necesarios para ejecutar el perfil y los fuentes/materiales obligatorios del OFXR modificado bajo LGPL. Los componentes ajenos conservan sus licencias y créditos. Proyecto comunitario independiente, sin afiliación oficial con Bandai Namco, NVIDIA, SimHub ni Next Level Racing. Consulta los [términos y créditos completos](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v0.8/docs/DISTRIBUTION.md).
+La integración original conserva la licencia MIT y se entrega tal cual, sin garantía, según su texto. No se publican los fuentes compilables de nuestro mod. Se incluyen los Lua necesarios para ejecutar el perfil y los fuentes/materiales obligatorios del OFXR modificado bajo LGPL. Los componentes ajenos conservan sus licencias y créditos. Proyecto comunitario independiente, sin afiliación oficial con Bandai Namco, NVIDIA, SimHub ni Next Level Racing. Consulta los [términos y créditos completos](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v 0.8.1/docs/DISTRIBUTION.md).
 
 No se certifican HF8 Pro, otras nightly/juegos ni ganancias de FPS. Proximidad a terreno/objetos, estelas y dirección de disparos recibidos no se presentan como funciones implementadas.
 
-**Nombre obligatorio:** ambas variantes deben llamarse `Ace7Game.zip` y contener una única carpeta `Ace7Game/` con el perfil completo. UEVR identifica el juego por el nombre del ZIP. Descarga cada variante en una carpeta distinta y elimina sufijos como `(1)` que añada el navegador antes de importar. La descarga sin HF8 está en R37; la descarga con HF8 está en 0.8.
+**Nombre obligatorio:** ambas variantes deben llamarse `Ace7Game.zip` y contener una única carpeta `Ace7Game/` con el perfil completo. UEVR identifica el juego por el nombre del ZIP. Descarga cada variante en una carpeta distinta y elimina sufijos como `(1)` que añada el navegador antes de importar. La descarga sin HF8 está en v 0.8.1-no-haptics; la descarga con HF8 está en v 0.8.1.
+
+
+## Actualización 0.8.1
+
+Ambos perfiles VR incluyen render 0.8.1; SimHub/HF8 conserva su versión 0.8. Usa los enlaces de la tabla inicial: con HF8 en v 0.8.1 y sin hápticos en v 0.8.1-no-haptics. Ambos se llaman Ace7Game.zip. Los dos OFXR vienen apagados. Hay un único bloque Apply / Apply and save para render y OFXR; todos los cambios OFXR requieren reiniciar. Persisten un aborto aislado de primera pareja tras cambiar resolución VD y la incidencia de contador/fluidez al alternar foco, pendientes de seguimiento; no se anuncian corregidos.

@@ -1,17 +1,17 @@
-# AC7 VR + HF8 0.8 — installation and use
+# AC7 VR + HF8 0.8.1 — installation and use
 
 This is a complete UEVR profile plus optional HF8 haptics. Installation is manual, once per PC; there is no installer. SimHub receives local telemetry from the included UEVR plug-in and drives the pad. You do not need to create a custom game or choose a fixed joystick button.
 
 ## Downloads and requirements
 
-Get the assets from [release 0.8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8).
+Get the assets from [release 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v 0.8.1).
 
 | Your setup | Files to download |
 | --- | --- |
-| VR without haptics | [Ace7Game.zip — without HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.1-r37/Ace7Game.zip) only |
-| VR with HF8 | [Ace7Game.zip — with HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8/Ace7Game.zip) and `AC7-HF8-SimHub.zip` |
+| VR without haptics | [Ace7Game.zip — without HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1-no-haptics/Ace7Game.zip) only |
+| VR with HF8 | [Ace7Game.zip — with HF8](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v 0.8.1/Ace7Game.zip) and `AC7-HF8-SimHub.zip` |
 
-Both UEVR ZIPs are complete profiles including the Pande base profile. Choose one. The version without HF8 is the unchanged R37 package and does not require SimHub. The previous R37 release remains available.
+Both UEVR ZIPs are complete profiles including the Pande base profile. Choose one. Both variants include renderer 0.8.1; the version without HF8 does not require SimHub. The previous R37 release remains available.
 
 - Windows, ACE COMBAT 7: SKIES UNKNOWN, Direct3D 11, and a working VR headset connection.
 - **UEVR Nightly 01143**, revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`: [exact official release](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Download its `UEVR.zip`. Other nightly versions are not validated.
@@ -26,7 +26,7 @@ Both UEVR ZIPs are complete profiles including the Pande base profile. Choose on
 4. Select **Import Config** and choose `Ace7Game.zip` (or `Ace7Game.zip` for the non-haptic version). Import the ZIP directly; do not extract it into the game or injector directory.
 5. For the HF8 variant, check that `%APPDATA%\UnrealVRMod\Ace7Game` now contains `plugins\AC7_Telemetry.dll`, `scripts\HF8_Haptics.lua`, and `AC7_Haptics`.
 
-The haptic package enables its local telemetry output. The SimHub profile initially disables the pad output, so you explicitly enable it in step 3. Renderer files are identical to R37. Do not replace other games' profiles or modify global graphics settings.
+The haptic package enables its local telemetry output. The SimHub profile initially disables the pad output, so you explicitly enable it in step 3. Both variants use the same renderer 0.8.1. Do not replace other games' profiles or modify global graphics settings.
 
 ## 2. Register AC7 in SimHub — one-time copy
 
@@ -86,7 +86,7 @@ The gun fallback reads your game's DirectInput joystick configuration automatica
 | Gun alone is silent | Check whether the configured controller falls within the fallback limits above; no fixed personal button is required. |
 | Cloud effect has no left/right motion | Reimport the matching 0.8 profile/definition and check the cloud effect's separate left/right assignments. Do not use an earlier alpha profile. |
 | Vibration stops on pause or a lost signal | Expected: menu/pause and stale-data guards silence the output. |
-| DLSS crash | R37 has a known shader/pass-identification issue on some systems. Try startup TAA with Neural and OFXR off; select DLSS after entering controlled flight. This is a suggested workaround, not a confirmed fix for every system. Changing OFXR requires a restart. |
+| DLSS crash | The renderer has a known shader/pass-identification issue on some systems. Try startup TAA with Neural and OFXR off; select DLSS after entering controlled flight. This is a suggested workaround, not a confirmed fix for every system. Changing OFXR requires a restart. |
 
 For support, use this repository's [Issues](https://github.com/Beren5556/AC7VRDLSS-Downloads/issues). Include the mod version, UEVR revision, SimHub version, HF8 model, controller type and steps to reproduce. Remove personal paths or identifying information from any log you choose to share.
 
@@ -96,8 +96,13 @@ You do **not** repeat installation for each flight. Back up UEVR settings and ex
 
 To return to the non-haptic variant, close the applications, back up/move the whole AC7 UEVR profile outside its storage folder, then import `Ace7Game.zip`. A clean switch prevents an old haptic DLL remaining loaded. You may also remove just the AC7-HF8 definition folder and its SimHub effects profile. Leave other games' profiles intact. Restoring your previous full backup is another rollback option.
 
-The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v0.8/docs/DISTRIBUTION.md).
+The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/v 0.8.1/docs/DISTRIBUTION.md).
 
 HF8 Pro, other games/nightly builds, proximity to scenery, wakes and directional incoming gunfire are not claimed as implemented/validated features. No FPS gain is promised.
 
-**ZIP naming:** both variants must remain named `Ace7Game.zip`, containing one `Ace7Game/` folder with the entire profile. UEVR uses the ZIP filename to identify the game. Download each variant to a separate folder; remove browser-added suffixes such as `(1)` before importing. The non-HF8 download is in R37; the HF8 download is in 0.8.
+**ZIP naming:** both variants must remain named `Ace7Game.zip`, containing one `Ace7Game/` folder with the entire profile. UEVR uses the ZIP filename to identify the game. Download each variant to a separate folder; remove browser-added suffixes such as `(1)` before importing. Both downloads are version 0.8.1; the non-HF8 asset is in the no-haptics companion release.
+
+
+## Update 0.8.1
+
+Both VR downloads now use renderer 0.8.1; the SimHub/HF8 components remain 0.8. See README for the two corrected download links. Both OFXR providers default to Off. One shared Apply / Apply and save action bar controls rendering and OFXR; all OFXR changes require restarting. See README Known limitations for the isolated first-pair abort and focus/counter issue, retained for follow-up.

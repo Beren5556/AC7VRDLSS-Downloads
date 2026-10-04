@@ -32,3 +32,8 @@ The corresponding modified OFXR source and build instructions for this release a
 ## AC7 Haptics 0.8
 
 The optional AC7 telemetry DLL and its HF8 panel, effects and documentation are original integration additions under the root MIT license. The UEVR API notice is included at `AC7_Haptics/licenses/UEVR-API-LICENSE.txt` in the HF8 profile. SimHub and Next Level Racing hardware are external products, not bundled or relicensed. See [distribution terms](docs/DISTRIBUTION.md) for scope, source-distribution policy and complete credits.
+
+
+## OFXR Fork Djules75
+
+The second provider is based on djules75/OFXR-Bridge 0.2.10.1 (V412), commit a1a4a2bf7b3307b7f4329c49870b158e5faaa45e, retaining LGPL-3.0-or-later. Its modified source is in [third_party/ofxr-djules75](third_party/ofxr-djules75), including notices for AMD, NVIDIA, Khronos and Valve headers. AC7 adaptations add private selection and host77 validity checks; no global tray installation is required.
