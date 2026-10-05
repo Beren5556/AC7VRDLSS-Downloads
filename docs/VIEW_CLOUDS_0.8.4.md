@@ -8,7 +8,7 @@ the NVIDIA_DLSS renderer or the external overlay binaries.
 - The **AC7 View & Clouds** UEVR panel keeps the Original / A / B selector and active-mode indicator. B remains a diagnostic alternative.
 - **F5** toggles local aircraft geometry during active flight. Aircraft visibility starts enabled each session; the flight HUD remains available.
 - Optional **Camera 1** has a forward offset of +1500. Camera 0 retains the original position. Camera selection and F5 visibility are independent.
-- The new helper interface is in English. Existing DLSS/DLAA, external overlay and optional haptics remain available. HF8 and both OFXR providers remain off by default.
+- Existing DLSS/DLAA, external overlay and optional haptics remain available. HF8 and both OFXR providers remain off by default.
 
 ## Installation and use
 

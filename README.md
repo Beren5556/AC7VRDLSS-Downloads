@@ -13,7 +13,7 @@ GitHub's automatic Source code archives are not installable profiles.
 
 - Cloud workaround A enabled by default, with Original/A/B selection and status.
 - Optional local aircraft geometry toggle on F5, retaining the flight HUD.
-- English AC7 View & Clouds panel and optional forward Camera 1 preset.
+- AC7 View & Clouds panel and optional forward Camera 1 preset.
 - Existing renderer and external overlay binaries preserved.
 
 See [view and cloud controls](docs/VIEW_CLOUDS_0.8.4.md) for operation and scope.
