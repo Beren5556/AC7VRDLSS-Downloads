@@ -1,35 +1,72 @@
-# AC7VRDLSS 0.8.1
+# AC7VRDLSS 0.8.3
 
-One complete UEVR profile including the Pande base profile, NVIDIA_DLSS, both OFXR providers and HF8 support. **HF8 haptics and both OFXR providers are disabled by default.**
+Complete ACE COMBAT 7 UEVR profile with the accepted 0.8.3-r2 external overlay,
+NVIDIA_DLSS, both OFXR providers and optional HF8. HF8 and both OFXR providers
+are disabled by default. The native rendering DLL is unchanged from 0.8.2.
 
-**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.1/Ace7Game.zip)** — includes the HF8 SimHub definition and effects profile in `Ace7Game/AC7_Haptics/SimHub/`.
+**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.3/Ace7Game.zip)**
 
-Keep the exact filename `Ace7Game.zip`, with one root folder `Ace7Game/`. Remove browser-added `(1)` suffixes before importing. Do not import GitHub's automatic Source code archives.
+Keep that exact filename and the single `Ace7Game/` root when importing.
+GitHub's automatic Source code archives are not installable profiles.
 
-## What's new in 0.8.1
+## What's new
 
-- Added OFXR Fork Djules75 0.2.10.1 / V412 alongside OFXR Classic 0.2.1 / V116.
-- Separate UEVR controls and named INI parameters for each provider, with mutually exclusive activation. Both default to Off.
-- One shared Apply / Apply and save / Discard action bar for rendering and OFXR. OFXR changes require restarting the game.
+- Automatic OpenXR overlay startup with controller gesture and F10 opening.
+- Common controller profiles and headset/runtime information; priority Quest 2/Quest 3S and Pimax, Pico secondary.
+- Log page separates information/diagnostics from controls.
+- First output-resolution control with slider and +/-50 pixels per-eye width, shared Apply/save and external-edit synchronization.
+- Hot output selection uses the same setting as UEVR 01143; selected dimensions and submitted views are shown separately.
+- Bundled Python/Pillow and Node/Playwright host, independent of the developer's PC paths.
 
-## Install
+## Installation
 
-1. Close AC7 and UEVR. Back up your existing Ace7Game profile outside `%APPDATA%/UnrealVRMod` before replacing it.
-2. Use [UEVR Nightly 01143, revision 4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d).
-3. Import `Ace7Game.zip` using UEVR **Import Config**. The full base profile is included.
-4. Start AC7 and inject normally. Keep Menu Window Mode enabled for automatic screen/VR switching.
-5. To use HF8, follow the [English](docs/HF8-INSTALL-EN.md) or [Spanish](docs/HF8-INSTALL-ES.md) guide, then check **HF8 enabled** in the UEVR HF8 Haptics panel and press **Apply and save**. SimHub is only needed when using haptics.
+1. Close AC7 and UEVR. Back up your existing Ace7Game profile outside `%APPDATA%/UnrealVRMod`; do not merge blindly with old installations.
+2. Use [UEVR Nightly 01143, exact revision 4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d).
+3. Import `Ace7Game.zip` using UEVR Import Config. The full base profile is included.
+4. Run `%APPDATA%/UnrealVRMod/Ace7Game/ExternalOverlay/Setup-Overlay.cmd` **once after importing**. It checks the bundled host and installed Microsoft Edge, then creates local paths. Run it again if the profile moves. No separate Python/Node installation is needed.
+5. Start AC7 and inject normally. The overlay starts automatically; there is no separate overlay launcher for later sessions. Keep Menu Window Mode enabled for the profile's screen/VR switching.
+6. Optional HF8 setup: [English](docs/HF8-INSTALL-EN.md) / [Spanish](docs/HF8-INSTALL-ES.md). SimHub files are included under `AC7_Haptics/SimHub`; SimHub is only needed for haptics.
 
-## Controls and defaults
+## Controls
 
-The NVIDIA_DLSS panel provides NONE/TAA/DLAA/DLSS/DLSS5-Neural, DLSS resolution 50–99%, presets, sharpness and separate Neural controls. OFXR Classic 0.2.1/V116 and OFXR Fork Djules75 0.2.10.1/V412 have separate settings and mutually exclusive enable checkboxes. Both unchecked means Off.
+F10 toggles the overlay. With compatible controller actions, hold both index
+triggers and both grips for two seconds to open it, then release to rearm.
+Right aim/trigger/stick or supported trackpad controls pointer/click/scroll.
+Close hides the panel. Log shows headset/runtime/profiles and diagnostics.
 
-One action bar at the bottom: **Apply** applies changed render settings and stages OFXR; **Apply and save** also saves all groups for the next launch; **Discard** restores unsent edits. Every OFXR change requires a restart; it does not switch the loaded provider live. Generation is suspended outside controlled VR flight and requires valid stereo history when resuming. The red render label retains its immediate checkbox.
+Resolution +/- changes the draft by 50 pixels in per-eye width; height follows
+the aspect ratio. Apply submits changes; Apply and save also requests startup
+persistence. Actual presented dimensions remain separate from the selection.
+Edits from the native UEVR menu synchronize when there is no unsaved draft.
+Conflicting drafts must be reviewed/discarded; uncertain requests are not replayed.
 
-Defaults: DLSS Quality, scale 0 (follow quality), both OFXR disabled, Neural-before-DLSS enabled, red label and diagnostic tracing disabled. The configuration file is `Ace7Game/NVIDIA_DLSS/settings.ini`, with named [OFXR_Classic] and [OFXR_Fork_Djules75] sections. See [all parameters](docs/CONFIGURATION.md). Fork 3X requires PreferFPS; no multiplier guarantees the resulting FPS.
+The original NVIDIA_DLSS UEVR panel remains available. DLSS/DLAA/Neural and
+Classic/Fork OFXR remain managed by their native implementation. All OFXR
+changes still require restarting the game. The output-resolution option
+does not itself require restarting. Change overlay startup in UEVR's External
+overlay panel; that preference takes effect on the next game session.
 
-## Terms, sources and credits
+## Validation and scope
 
-Original components retain [MIT](LICENSE). [Distribution terms](docs/DISTRIBUTION.md) and [third-party notices](THIRD_PARTY.md) apply. Public assets contain binaries and necessary runtime Lua, not our buildable integration source. Corresponding modified OFXR sources and build materials are available for [Classic](third_party/ofxr) and [Fork Djules75](third_party/ofxr-djules75), under LGPL-3.0-or-later. See [provider build instructions](docs/BUILDING_OFXR.md). Credit Pande, praydog/UEVR, tig3rmast3r, djules75 and the authors named in component notices. Independent community mod; no vendor endorsement.
+30 offline cases passed on the exact layer/bridge artifacts, and the user
+accepted a flight test on 2026-10-05. Portable-host UI/lifecycle tests also
+passed. This is not an FPS benchmark or universal certification of every
+headset, connection, UEVR nightly or game. The hot-resolution accessor is
+strictly limited to the recorded 01143 backend identity.
 
-[Previous 0.8 release](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8) remains unchanged. Checksums are attached to the release. Standard HF8 was tested with SimHub 9.12.9; other games, runtimes and UEVR versions require their own validation.
+Existing rendering/performance investigations remain separate. Cloud/horizon
+artifacts reported with the basic UEVR profile are being researched separately;
+this release does not claim to fix them. For setup and troubleshooting see
+[overlay guide](docs/OVERLAY_0.8.3.md) and [parameters](docs/CONFIGURATION.md).
+
+## Credits, licenses and source policy
+
+Original components retain [MIT](LICENSE). Existing [third-party notices](THIRD_PARTY.md),
+[distribution terms](docs/DISTRIBUTION.md), [Classic sources](third_party/ofxr),
+[Fork sources](third_party/ofxr-djules75) and [provider build guide](docs/BUILDING_OFXR.md)
+remain available. Bundled host runtimes carry their licenses under ExternalOverlay/runtime.
+Microsoft Edge is required but not redistributed. Runtime HTML/JS/Lua are included
+to execute the panel; native integration and Python development sources stay private.
+Credit Pande, praydog, the OFXR authors and all component authors. No vendor endorsement.
+
+[Previous public 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.1) remains unchanged. There was no public 0.8.2 release.

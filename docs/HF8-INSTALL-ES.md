@@ -4,9 +4,9 @@ Perfil completo de UEVR con hápticos opcionales para HF8. La instalación es ma
 
 ## Qué descargar
 
-Desde los archivos de la [versión 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.1):
+Desde los archivos de la [versión 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.3):
 
-Descarga [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.1/Ace7Game.zip). El único perfil incluye HF8 y los archivos de SimHub en `Ace7Game/AC7_Haptics/SimHub/`. Los hápticos vienen desactivados; solo necesitas SimHub si los activas.
+Descarga [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.3/Ace7Game.zip). El único perfil incluye HF8 y los archivos de SimHub en `Ace7Game/AC7_Haptics/SimHub/`. Los hápticos vienen desactivados; solo necesitas SimHub si los activas.
 
 Necesitas Windows, ACE COMBAT 7 en Direct3D 11, visor conectado y **UEVR Nightly 01143**, revisión `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`. Descarga `UEVR.zip` de [esta versión oficial exacta](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Otras nightly no están validadas. Las funciones gráficas requieren una GPU NVIDIA compatible.
 

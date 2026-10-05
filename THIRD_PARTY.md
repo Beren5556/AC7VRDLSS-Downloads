@@ -37,3 +37,7 @@ The optional AC7 telemetry DLL and its HF8 panel, effects and documentation are 
 ## OFXR Fork Djules75
 
 The second provider is based on djules75/OFXR-Bridge 0.2.10.1 (V412), commit a1a4a2bf7b3307b7f4329c49870b158e5faaa45e, retaining LGPL-3.0-or-later. Its modified source is in [third_party/ofxr-djules75](third_party/ofxr-djules75), including notices for AMD, NVIDIA, Khronos and Valve headers. AC7 adaptations add private selection and host77 validity checks; no global tray installation is required.
+
+## External overlay 0.8.3
+
+The public profile includes the original executable Python host as CPython 3.12 bytecode, required HTML/JavaScript/Lua runtime assets, CPython 3.12.14, Pillow 12.3.0, Node 24.19.0 and Playwright/Core 1.62.1. Original buildable C++ and Python host source remain in the private repositories. Third-party runtime source/bytecode retains its own license. Full Python, Pillow and Node/Playwright notices are included under ExternalOverlay/runtime and ExternalOverlay/THIRD_PARTY.md in Ace7Game.zip. Microsoft Edge must already be installed and is not redistributed. The complete profile keeps HF8 and both OFXR providers disabled by default.

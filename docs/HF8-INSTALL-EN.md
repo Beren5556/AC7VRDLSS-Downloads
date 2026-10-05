@@ -4,9 +4,9 @@ This is a complete UEVR profile plus optional HF8 haptics. Installation is manua
 
 ## Downloads and requirements
 
-Get the assets from [release 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.1).
+Get the assets from [release 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.3).
 
-Download [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.1/Ace7Game.zip). This single complete profile includes HF8 and the SimHub files in `Ace7Game/AC7_Haptics/SimHub/`. HF8 is disabled by default; SimHub is only needed if you enable haptics.
+Download [Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.3/Ace7Game.zip). This single complete profile includes HF8 and the SimHub files in `Ace7Game/AC7_Haptics/SimHub/`. HF8 is disabled by default; SimHub is only needed if you enable haptics.
 
 - Windows, ACE COMBAT 7: SKIES UNKNOWN, Direct3D 11, and a working VR headset connection.
 - **UEVR Nightly 01143**, revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`: [exact official release](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d). Download its `UEVR.zip`. Other nightly versions are not validated.

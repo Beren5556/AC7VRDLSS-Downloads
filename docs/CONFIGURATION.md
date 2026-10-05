@@ -11,16 +11,16 @@ These keys affect **DLSS5 / Neural**. Percentages are integer values: **100 mean
 | Key | Allowed values | Default |
 | --- | --- | --- |
 | `NeuralStyle` | `0` Balanced, `1` Sharp, `2` Cinematic | `2` |
-| `NeuralIntensity` | `0`Ã¢â‚¬â€œ`200` % | `100` |
-| `NeuralStructure` | Local structure strength, `0`Ã¢â‚¬â€œ`200` % | `100` |
-| `NeuralTone` | Local tone strength, `0`Ã¢â‚¬â€œ`200` % | `100` |
+| `NeuralIntensity` | `0`–`200` % | `100` |
+| `NeuralStructure` | Local structure strength, `0`–`200` % | `100` |
+| `NeuralTone` | Local tone strength, `0`–`200` % | `100` |
 | `NeuralSkinAuto` | `1` automatic skin strength, `0` manual | `1` |
-| `NeuralSkin` | Manual skin structure, `0`Ã¢â‚¬â€œ`200` %; ignored when Auto is enabled | `100` |
+| `NeuralSkin` | Manual skin structure, `0`–`200` %; ignored when Auto is enabled | `100` |
 | `NeuralAutoMask` | `1` automatic Neural mask, `0` disabled | `0` |
-| `NeuralTransfer` | Resolved Neural detail strength, `0`Ã¢â‚¬â€œ`200` % | `100` |
-| `NeuralColor` | Resolved Neural color strength, `0`Ã¢â‚¬â€œ`100` % | `100` |
-| `NeuralSharpness` | Neural resolve sharpness, `0`Ã¢â‚¬â€œ`100` % | `0` |
-| `NeuralPercent` | Neural processing resolution, `50`Ã¢â‚¬â€œ`100` % | `85` |
+| `NeuralTransfer` | Resolved Neural detail strength, `0`–`200` % | `100` |
+| `NeuralColor` | Resolved Neural color strength, `0`–`100` % | `100` |
+| `NeuralSharpness` | Neural resolve sharpness, `0`–`100` % | `0` |
+| `NeuralPercent` | Neural processing resolution, `50`–`100` % | `85` |
 | `NeuralBeforeDLSS` | `true` before DLSS, `false` after DLSS | `true` |
 
 The scale is relative to the DLSS input when Before is enabled, otherwise to the DLSS output. At **100% Neural resolution**, there is no reduced-resolution resolve: `NeuralTransfer`, `NeuralColor` and `NeuralSharpness` are inactive. Style/intensity/structure/tone/skin remain connected at 100%. With automatic skin enabled, the runtime chooses the skin strength; the plug-in does not claim a numeric effective value.
@@ -34,8 +34,8 @@ Model controls map to the Cost-Scaler `[DLSSNR_Settings]` parameters `Style`, `I
 | `StartupMode` | `NONE`, `TAA`, `DLAA`, `DLSS`, `DLSS5` | `DLSS` |
 | `Preset` | `Auto`, `J`, `K`, `L`, `M`; requested SR preset | `K` |
 | `DLSSQuality` | `Quality`, `Balanced`, `Performance` | `Quality` |
-| `DLSSScaleBps` | `0` follows quality; `5000`Ã¢â‚¬â€œ`9900` means 50.00%Ã¢â‚¬â€œ99.00% | `0` |
-| `SharpnessPercent` | DLSS/DLAA output sharpness, `0`Ã¢â‚¬â€œ`100` % | `0` |
+| `DLSSScaleBps` | `0` follows quality; `5000`–`9900` means 50.00%–99.00% | `0` |
+| `SharpnessPercent` | DLSS/DLAA output sharpness, `0`–`100` % | `0` |
 | `TestLabel` | `true` shows the red render-mode label | `false` |
 | `TestHotkeys` | `true` enables F8 mode / F9 quality | `true` |
 | `Diagnostics` | `true` enables extra diagnostic work | `false` |
@@ -66,9 +66,9 @@ NeuralSharpness=0
 
 ## Custom DLSS resolution
 
-In DLSS or DLSS5 / Neural mode, the **Internal resolution (%)** slider accepts 50.00Ã¢â‚¬â€œ99.00%. Drag it or Ctrl+click it to type an exact percentage. Quality (66.7%), Balanced (58%) and Performance (50%) remain quick reference buttons. Click **Apply** to use the change, and **Save startup settings** to retain it for the next launch.
+In DLSS or DLSS5 / Neural mode, the **Internal resolution (%)** slider accepts 50.00–99.00%. Drag it or Ctrl+click it to type an exact percentage. Quality (66.7%), Balanced (58%) and Performance (50%) remain quick reference buttons. Click **Apply** to use the change, and **Save startup settings** to retain it for the next launch.
 
-For a direct INI edit with the game closed, use `DLSSScaleBps=8000` for 80%, `7537` for 75.37%, or `9900` for 99%. `0` follows `DLSSQuality`. DLAA always uses native 100% input and disables this control. Neural resolution remains a separate 50Ã¢â‚¬â€œ100% setting.
+For a direct INI edit with the game closed, use `DLSSScaleBps=8000` for 80%, `7537` for 75.37%, or `9900` for 99%. `0` follows `DLSSQuality`. DLAA always uses native 100% input and disables this control. Neural resolution remains a separate 50–100% setting.
 
 ## Automatic flight routing
 
