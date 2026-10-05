@@ -1,15 +1,24 @@
-# AC7VRDLSS 0.8.3
+# AC7VRDLSS 0.8.4
 
 Complete ACE COMBAT 7 UEVR profile with the accepted 0.8.3-r2 external overlay,
 NVIDIA_DLSS, both OFXR providers and optional HF8. HF8 and both OFXR providers
 are disabled by default. The native rendering DLL is unchanged from 0.8.2.
 
-**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.3/Ace7Game.zip)**
+**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.4/Ace7Game.zip)**
 
 Keep that exact filename and the single `Ace7Game/` root when importing.
 GitHub's automatic Source code archives are not installable profiles.
 
-## What's new
+## New in 0.8.4
+
+- Cloud workaround A enabled by default, with Original/A/B selection and status.
+- Optional local aircraft geometry toggle on F5, retaining the flight HUD.
+- English AC7 View & Clouds panel and optional forward Camera 1 preset.
+- Existing renderer and external overlay binaries preserved.
+
+See [view and cloud controls](docs/VIEW_CLOUDS_0.8.4.md) for operation and scope.
+
+## Retained from 0.8.3
 
 - Automatic OpenXR overlay startup with controller gesture and F10 opening.
 - Common controller profiles and headset/runtime information; priority Quest 2/Quest 3S and Pimax, Pico secondary.
@@ -54,9 +63,9 @@ passed. This is not an FPS benchmark or universal certification of every
 headset, connection, UEVR nightly or game. The hot-resolution accessor is
 strictly limited to the recorded 01143 backend identity.
 
-Existing rendering/performance investigations remain separate. Cloud/horizon
-artifacts reported with the basic UEVR profile are being researched separately;
-this release does not claim to fix them. For setup and troubleshooting see
+Cloud workaround A removes the selected material contribution and resolved the
+observed cut in the user-tested scene. It is not a reconstruction of the material
+or universal validation across missions and weather. For setup and troubleshooting see
 [overlay guide](docs/OVERLAY_0.8.3.md) and [parameters](docs/CONFIGURATION.md).
 
 ## Credits, licenses and source policy
