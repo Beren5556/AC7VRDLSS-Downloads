@@ -8,7 +8,7 @@ Keep the exact filename and the single `Ace7Game/` root when importing. GitHub's
 
 ## Release note
 
-Se eliminan las dependencias internas de OFXR; a partir de ahora debe usarse externamente.
+Internal OFXR dependencies have been removed. From now on, OFXR must be used externally.
 
 ## Installation
 
