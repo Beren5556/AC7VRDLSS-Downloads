@@ -4,7 +4,7 @@ Complete ACE COMBAT 7 UEVR profile with NVIDIA DLSS/DLAA/Neural, the external ov
 
 **[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.5/Ace7Game.zip)**
 
-Keep the exact filename and the single `Ace7Game/` root when importing. GitHub's automatic Source code archives are not installable profiles.
+Keep the exact filename `Ace7Game.zip`. The archive contains the profile files and subdirectories directly, without an `Ace7Game/` wrapper. GitHub's automatic Source code archives are not installable profiles.
 
 ## Release note
 
