@@ -81,7 +81,7 @@ The gun fallback reads your game's DirectInput joystick configuration automatica
 | Gun alone is silent | Check whether the configured controller falls within the fallback limits above; no fixed personal button is required. |
 | Cloud effect has no left/right motion | Reimport the matching 0.8 profile/definition and check the cloud effect's separate left/right assignments. Do not use an earlier alpha profile. |
 | Vibration stops on pause or a lost signal | Expected: menu/pause and stale-data guards silence the output. |
-| DLSS crash | The renderer has a known shader/pass-identification issue on some systems. Try startup TAA with Neural and OFXR off; select DLSS after entering controlled flight. This is a suggested workaround, not a confirmed fix for every system. Changing OFXR requires a restart. |
+| DLSS crash | The renderer has a known shader/pass-identification issue on some systems. Try startup TAA with Neural off; select DLSS after entering controlled flight. This is a suggested workaround, not a confirmed fix for every system. |
 
 For support, use this repository's [Issues](https://github.com/Beren5556/AC7VRDLSS-Downloads/issues). Include the mod version, UEVR revision, SimHub version, HF8 model, controller type and steps to reproduce. Remove personal paths or identifying information from any log you choose to share.
 
@@ -91,16 +91,10 @@ You do **not** repeat installation for each flight. Back up UEVR settings and ex
 
 To disable haptics, uncheck **HF8 enabled** in UEVR and press **Apply and save**. Keep the same complete profile. Restore your full backup to roll back.
 
-The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included; modified OFXR source/build materials are supplied under its LGPL terms in the repository. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/main/docs/DISTRIBUTION.md).
+The original integration is supplied under the MIT license, as-is without warranty. The public distribution excludes the buildable source of our mod. Necessary runtime Lua scripts remain included. Existing third-party notices and licenses remain applicable. This is an independent community mod, not an official product of Bandai Namco, NVIDIA, SimHub or Next Level Racing. See the release's [terms and credits](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/main/docs/DISTRIBUTION.md).
 
 HF8 Pro, other games/nightly builds, proximity to scenery, wakes and directional incoming gunfire are not claimed as implemented/validated features. No FPS gain is promised.
 
 **ZIP naming:** keep `Ace7Game.zip` with a single `Ace7Game/` root folder.
-
-## What's new in 0.8.1
-
-- Added OFXR Fork Djules75 0.2.10.1 / V412 alongside OFXR Classic 0.2.1 / V116.
-- Separate UEVR controls and named INI parameters for each provider, with mutually exclusive activation. Both default to Off.
-- One shared Apply / Apply and save / Discard action bar for rendering and OFXR. OFXR changes require restarting the game.
 
 To activate haptics after setting up SimHub, check **HF8 enabled** in UEVR and press **Apply and save**.

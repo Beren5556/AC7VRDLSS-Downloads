@@ -2,7 +2,7 @@
 
 Required host: UEVR Nightly 01143, revision `4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d`. Use this exact host build; compatibility does not carry over automatically to other builds.
 
-Edit `<UEVR profile>/NVIDIA_DLSS/settings.ini` while the game is closed. Values are read at startup. Rendering settings use `[NVIDIA_DLSS]`; OFXR uses the separate `[OFXR_Classic]` and `[OFXR_Fork_Djules75]` sections below. One shared action bar at the bottom of the UEVR panel controls all three groups: **Apply** applies changed rendering settings and stages changed OFXR settings; **Apply and save** also writes all settings for the next launch. **Discard** discards unsent edits in both groups. OFXR always requires restarting the game; applying does not change the active provider. Keep your game Engine.ini unchanged.
+Edit `<UEVR profile>/NVIDIA_DLSS/settings.ini` with the game closed. Settings are read at startup. Use [NVIDIA_DLSS] for rendering. Apply requests changes at a complete stereo boundary; Apply and save also saves startup settings. Discard restores the current native selection. The overlay and UEVR panel share the same native renderer. Keep Engine.ini unchanged.
 
 ## Neural appearance
 
@@ -72,72 +72,8 @@ For a direct INI edit with the game closed, use `DLSSScaleBps=8000` for 80%, `75
 
 ## Automatic flight routing
 
-Your saved rendering selection applies during controlled VR flight, in cockpit and external flight cameras. Menus, runway sequences, cinematics, pauses, replays and unavailable flight controls retain original rendering and suspend OFXR. The included profile must retain **Menu Window Mode** for screen/VR detection. No manual changes to `Engine.ini` are required.
+Your saved rendering selection applies during controlled VR flight, in cockpit and external flight cameras. Menus, runway sequences, cinematics, pauses, replays and unavailable flight controls retain original rendering. The included profile must retain **Menu Window Mode** for screen/VR detection. No manual changes to `Engine.ini` are required.
 
 The panel shows a waiting state until flight permission and valid temporal inputs are available. Initial Neural startup can pause rendering while its resources initialize. Missing flight signals suspend processing; an initialization stall does not repeatedly restart Neural.
 
-Changing either OFXR block requires a game restart. Once loaded, OFXR pauses and resumes automatically with controlled flight. Transitions invalidate previous frame history.
 
-## Separate OFXR provider controls
-
-The UEVR NVIDIA_DLSS panel has two separate blocks: **OFXR Classic** (0.2.1 / V116) and **OFXR Fork Djules75** (0.2.10.1 / V412, commit a1a4a2bf7b3307b7f4329c49870b158e5faaa45e). Each block has its own enable checkbox and parameters. Checking one automatically unchecks the other. Leave both unchecked for Off. Each provider keeps its own values when switching between them.
-
-Use **Apply and save**, then restart the game. **Apply** stages the settings without saving or switching the loaded DLL. All OFXR changes require a game restart, including 2X/3X. The status shows the provider actually selected at startup. The standalone fork's live 3X switch is not exposed.
-
-### Two separate INI sections
-
-File: `%APPDATA%/UnrealVRMod/Ace7Game/NVIDIA_DLSS/settings.ini`.
-
-Both providers are disabled in the default configuration:
-
-```ini
-[OFXR_Classic]
-; Classic 0.2.1 / V116 (2X). Enable only one OFXR. Restart after any OFXR change.
-Enabled=false
-; Backend: NVIDIA or FidelityFX (AMD).
-Backend=NVIDIA
-; NVIDIA optical flow quality: Fast (experimental), Medium, Slow.
-NvidiaPreset=Medium
-; NVIDIA optical flow resolution: 50, 75, 100. Independent of DLSS and Neural.
-FlowScalePercent=50
-; NVIDIA forward and backward flow: true or false. Normally false.
-BidirectionalFlow=false
-; FPS counter: Off, UpperLeft, UpperRight, LowerLeft, LowerRight.
-FPSOverlay=Off
-; Classic provider diagnostic log: true or false. Normally false.
-DiagnosticLogging=false
-
-[OFXR_Fork_Djules75]
-; Fork djules75 0.2.10.1 / V412. Enable only one OFXR. Restart after any OFXR change.
-Enabled=false
-; Backend: NVIDIA or FidelityFX (AMD).
-Backend=NVIDIA
-; NVIDIA optical flow quality: Fast (experimental), Medium, Slow.
-NvidiaPreset=Medium
-; NVIDIA optical flow resolution: 50, 75, 100. Independent of DLSS and Neural.
-FlowScalePercent=50
-; Frame generation multiplier: 2 or 3. 3 requires PreferFPS=true.
-FrameMultiplier=2
-; true: prioritize FPS. false: prioritize latency (2X only).
-PreferFPS=true
-; FPS counter: Off, UpperLeft, UpperRight, LowerLeft, LowerRight.
-FPSOverlay=Off
-; Fork provider diagnostic log: true or false. Normally false.
-DiagnosticLogging=false
-```
-
-For the first fork test, change only `Enabled=false` to `Enabled=true` under `[OFXR_Fork_Djules75]`. Keep `[OFXR_Classic]` disabled. Its other defaults already select NVIDIA Medium, 50% flow resolution, 2X, FPS priority, no counter and no diagnostic log.
-
-To use Classic, enable only `[OFXR_Classic]`. To turn OFXR off, set both `Enabled` values to false. If both are true, the plugin reports a configuration error and loads neither provider.
-
-Classic has its own backend, NVIDIA preset/resolution, bidirectional flow, FPS overlay and diagnostics. Classic always uses 2X. The fork has separate backend, NVIDIA preset/resolution, 2X/3X, FPS priority, FPS overlay and diagnostics. Its 3X mode requires `PreferFPS=true` and may show more artifacts. NVIDIA preset/resolution and Classic bidirectional flow are inactive with FidelityFX. Optical flow resolution is independent of DLSS and Neural scales.
-
-The new sections replace the old `OFXREnabled` flag and compact `OFXRConfig` record. Old files remain readable for migration; saving from UEVR writes named parameters in both sections and removes the obsolete keys. Other rendering settings, comments and HF8 settings are preserved. No numeric record needs to be edited by the user. Do not edit the generated provider INIs inside the versioned runtime.
-
-### Operation and validation
-
-Both providers require a validated stereo pair and controlled VR flight. Generation is suspended for menus, 2D mode, pause, cinematics, invalid or stale flight state, and incompatible stereo history. A new history is required on reentry. HF8 retains its existing independent controls and rules. Only one private OFXR DLL is loaded. No tray application or global layer registration is installed.
-
-UEVR reference: Nightly 01143, revision 4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d. The fork's D3D11 bridge and single swapchain rings are managed internally.
-
-Offline checks and installation receipts are listed in the release report. They do not establish physical headset image quality or FPS improvement. The coordinated HF8/VR test was accepted with known limitations documented in the release README. No physical validation of other games or HF8 Pro is implied.

@@ -1,3 +1,7 @@
+# Historical overlay 0.8.3 instructions
+
+For the current profile use [the current guide](OVERLAY_0.8.5.md); the setup below applies only to the historical release.
+
 # Overlay 0.8.3 — installation and troubleshooting
 
 Import the complete Ace7Game.zip, then run ExternalOverlay/Setup-Overlay.cmd

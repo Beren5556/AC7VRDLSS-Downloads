@@ -1,81 +1,33 @@
-# AC7VRDLSS 0.8.4
+# AC7VRDLSS 0.8.5
 
-Complete ACE COMBAT 7 UEVR profile with the accepted 0.8.3-r2 external overlay,
-NVIDIA_DLSS, both OFXR providers and optional HF8. HF8 and both OFXR providers
-are disabled by default. The native rendering DLL is unchanged from 0.8.2.
+Complete ACE COMBAT 7 UEVR profile with NVIDIA DLSS/DLAA/Neural, the external overlay, View & Clouds and optional HF8.
 
-**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.4/Ace7Game.zip)**
+**[Download Ace7Game.zip](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/download/v0.8.5/Ace7Game.zip)**
 
-Keep that exact filename and the single `Ace7Game/` root when importing.
-GitHub's automatic Source code archives are not installable profiles.
+Keep the exact filename and the single `Ace7Game/` root when importing. GitHub's automatic Source code archives are not installable profiles.
 
-## New in 0.8.4
+## Release note
 
-- Cloud workaround A enabled by default, with Original/A/B selection and status.
-- Optional local aircraft geometry toggle on F5, retaining the flight HUD.
-- AC7 View & Clouds panel and optional forward Camera 1 preset.
-- Existing renderer and external overlay binaries preserved.
-
-See [view and cloud controls](docs/VIEW_CLOUDS_0.8.4.md) for operation and scope.
-
-## Retained from 0.8.3
-
-- Automatic OpenXR overlay startup with controller gesture and F10 opening.
-- Common controller profiles and headset/runtime information; priority Quest 2/Quest 3S and Pimax, Pico secondary.
-- Log page separates information/diagnostics from controls.
-- First output-resolution control with slider and +/-50 pixels per-eye width, shared Apply/save and external-edit synchronization.
-- Hot output selection uses the same setting as UEVR 01143; selected dimensions and submitted views are shown separately.
-- Bundled Python/Pillow and Node/Playwright host, independent of the developer's PC paths.
+Se eliminan las dependencias internas de OFXR; a partir de ahora debe usarse externamente.
 
 ## Installation
 
-1. Close AC7 and UEVR. Back up your existing Ace7Game profile outside `%APPDATA%/UnrealVRMod`; do not merge blindly with old installations.
-2. Use [UEVR Nightly 01143, exact revision 4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d).
-3. Import `Ace7Game.zip` using UEVR Import Config. The full base profile is included.
-4. Run `%APPDATA%/UnrealVRMod/Ace7Game/ExternalOverlay/Setup-Overlay.cmd` **once after importing**. It checks the bundled host and installed Microsoft Edge, then creates local paths. Run it again if the profile moves. No separate Python/Node installation is needed.
-5. Start AC7 and inject normally. The overlay starts automatically; there is no separate overlay launcher for later sessions. Keep Menu Window Mode enabled for the profile's screen/VR switching.
-6. Optional HF8 setup: [English](docs/HF8-INSTALL-EN.md) / [Spanish](docs/HF8-INSTALL-ES.md). SimHub files are included under `AC7_Haptics/SimHub`; SimHub is only needed for haptics.
+1. Close AC7 and UEVR normally. Keep any recovery copy outside the active profile.
+2. **Manually delete the previous Ace7Game profile before importing. Do not merge folders or restore old configuration files.**
+3. Use [UEVR Nightly 01143, exact revision 4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d](https://github.com/praydog/UEVR-nightly/releases/tag/nightly-01143-4ee5c6b6162dee2291fc75f9dfc57667f6d45a2d).
+4. Import `Ace7Game.zip` with UEVR Import Config, then start AC7 and inject normally. No setup script, host.ini or separate launcher is required. Python/Pillow and Node/Playwright are included; Microsoft Edge must already be installed.
+5. Keep Menu Window Mode enabled. Optional HF8 instructions: [English](docs/HF8-INSTALL-EN.md) / [Spanish](docs/HF8-INSTALL-ES.md). SimHub is only required for haptics; HF8 is off by default.
 
 ## Controls
 
-F10 toggles the overlay. With compatible controller actions, hold both index
-triggers and both grips for two seconds to open it, then release to rearm.
-Right aim/trigger/stick or supported trackpad controls pointer/click/scroll.
-Close hides the panel. Log shows headset/runtime/profiles and diagnostics.
+F10 toggles the overlay. Hold both index triggers and both grips for two seconds to open it with compatible controller actions; release to rearm. Right aim/trigger/stick or supported trackpad operates the panel. Close hides it; Log shows system/runtime information.
 
-Resolution +/- changes the draft by 50 pixels in per-eye width; height follows
-the aspect ratio. Apply submits changes; Apply and save also requests startup
-persistence. Actual presented dimensions remain separate from the selection.
-Edits from the native UEVR menu synchronize when there is no unsaved draft.
-Conflicting drafts must be reviewed/discarded; uncertain requests are not replayed.
+Apply submits the draft; Apply and save also requests persistence. Resolution selection and actual presented dimensions are separate. External changes synchronize with a clean draft; conflicting drafts must be reviewed or discarded. The original NVIDIA_DLSS UEVR panel remains available. Overlay startup preference takes effect next session.
 
-The original NVIDIA_DLSS UEVR panel remains available. DLSS/DLAA/Neural and
-Classic/Fork OFXR remain managed by their native implementation. All OFXR
-changes still require restarting the game. The output-resolution option
-does not itself require restarting. Change overlay startup in UEVR's External
-overlay panel; that preference takes effect on the next game session.
+[Parameters](docs/CONFIGURATION.md), [overlay troubleshooting](docs/OVERLAY_0.8.5.md), [View & Clouds controls](docs/VIEW_CLOUDS_0.8.4.md).
 
-## Validation and scope
+## Scope and licenses
 
-30 offline cases passed on the exact layer/bridge artifacts, and the user
-accepted a flight test on 2026-10-05. Portable-host UI/lifecycle tests also
-passed. This is not an FPS benchmark or universal certification of every
-headset, connection, UEVR nightly or game. The hot-resolution accessor is
-strictly limited to the recorded 01143 backend identity.
+The corrected complete profile was accepted in a local integration test on 2026-10-07. This is not an FPS benchmark or certification of every headset, mission, aircraft or UEVR nightly. Cloud mode A remains the default workaround; Original/A/B and optional F5 aircraft visibility remain available.
 
-Cloud workaround A removes the selected material contribution and resolved the
-observed cut in the user-tested scene. It is not a reconstruction of the material
-or universal validation across missions and weather. For setup and troubleshooting see
-[overlay guide](docs/OVERLAY_0.8.3.md) and [parameters](docs/CONFIGURATION.md).
-
-## Credits, licenses and source policy
-
-Original components retain [MIT](LICENSE). Existing [third-party notices](THIRD_PARTY.md),
-[distribution terms](docs/DISTRIBUTION.md), [Classic sources](third_party/ofxr),
-[Fork sources](third_party/ofxr-djules75) and [provider build guide](docs/BUILDING_OFXR.md)
-remain available. Bundled host runtimes carry their licenses under ExternalOverlay/runtime.
-Microsoft Edge is required but not redistributed. Runtime HTML/JS/Lua are included
-to execute the panel; native integration and Python development sources stay private.
-Credit Pande, praydog, the OFXR authors and all component authors. No vendor endorsement.
-
-[Previous public 0.8.1](https://github.com/Beren5556/AC7VRDLSS-Downloads/releases/tag/v0.8.1) remains unchanged. There was no public 0.8.2 release.
+[MIT](LICENSE), [third-party notices](THIRD_PARTY.md) and [distribution terms](docs/DISTRIBUTION.md) apply. Bundled runtimes retain their licenses. Required Lua/HTML/JavaScript and third-party runtime components are included; original native and Python development sources remain private. No vendor endorsement. Previous releases remain unchanged.

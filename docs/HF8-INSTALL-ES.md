@@ -81,7 +81,7 @@ La alternativa del cañón lee la configuración DirectInput del juego, identifi
 | Solo el cañón está silencioso | Comprueba los límites de la alternativa automática de entrada; no hay un botón personal fijo. |
 | La nube no alterna de lado | Reimporta definición/perfil 0.8 y comprueba sus dos canales independientes. No utilices el perfil alfa antiguo. |
 | Deja de vibrar al pausar o perder datos | Es el comportamiento esperado de las protecciones. |
-| Cierre al activar DLSS | El render mantiene una incidencia de identificación de shader/paso en algunos equipos. Prueba a iniciar en TAA con Neural y OFXR apagados y activar DLSS ya en vuelo. Es una alternativa sugerida, no una solución confirmada para todos los casos. Cambiar OFXR exige reiniciar el juego. |
+| Cierre al activar DLSS | El render mantiene una incidencia de identificación de shader/paso en algunos equipos. Prueba a iniciar en TAA con Neural apagado y activar DLSS ya en vuelo. Es una alternativa sugerida, no una solución confirmada para todos los casos. |
 
 Para ayuda, abre una [incidencia](https://github.com/Beren5556/AC7VRDLSS-Downloads/issues) con versión del mod, nightly, versión de SimHub, modelo HF8, mando y pasos para reproducirla. Retira información personal de los registros que decidas compartir.
 
@@ -93,16 +93,10 @@ Para desactivar los hápticos, desmarca **HF8 enabled** en UEVR y pulsa **Apply 
 
 ## Términos y alcance
 
-La integración original conserva la licencia MIT y se entrega tal cual, sin garantía, según su texto. No se publican los fuentes compilables de nuestro mod. Se incluyen los Lua necesarios para ejecutar el perfil y los fuentes/materiales obligatorios del OFXR modificado bajo LGPL. Los componentes ajenos conservan sus licencias y créditos. Proyecto comunitario independiente, sin afiliación oficial con Bandai Namco, NVIDIA, SimHub ni Next Level Racing. Consulta los [términos y créditos completos](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/main/docs/DISTRIBUTION.md).
+La integración original conserva la licencia MIT y se entrega tal cual, sin garantía, según su texto. No se publican los fuentes compilables de nuestro mod. Se incluyen los Lua necesarios para ejecutar el perfil. Los componentes ajenos conservan sus licencias y créditos. Proyecto comunitario independiente, sin afiliación oficial con Bandai Namco, NVIDIA, SimHub ni Next Level Racing. Consulta los [términos y créditos completos](https://github.com/Beren5556/AC7VRDLSS-Downloads/blob/main/docs/DISTRIBUTION.md).
 
 No se certifican HF8 Pro, otras nightly/juegos ni ganancias de FPS. Proximidad a terreno/objetos, estelas y dirección de disparos recibidos no se presentan como funciones implementadas.
 
 **Nombre obligatorio:** `Ace7Game.zip`, con una única raíz `Ace7Game/`.
-
-## Novedades 0.8.1
-
-- OFXR Fork Djules75 añadido junto a OFXR Classic.
-- Bloques y parámetros independientes, activación excluyente y ambos apagados por defecto.
-- Un único bloque Apply / Apply and save / Discard para render y OFXR. Los cambios OFXR requieren reiniciar.
 
 Tras configurar SimHub, marca **HF8 enabled** en UEVR y pulsa **Apply and save** para activar los hápticos.
